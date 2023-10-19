@@ -63,7 +63,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="border rounded-md">
+    <div className="border rounded-md text-foreground">
       <Table>
 
         <TableHeader>
@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
             <TableRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => {
                 return (
-                  <TableHead key={header.id} className="font-bold text-black">
+                  <TableHead key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(

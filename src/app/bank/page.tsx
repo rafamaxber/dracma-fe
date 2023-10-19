@@ -6,7 +6,7 @@ import { AddBankForm } from "./components/AddBank"
 
 export default function BankForm() {
   return (
-    <div className="container-form container w-[660px] bg-white">
+    <div className="container-form container w-[660px] bg-background text-foreground">
       <h2 className="text-2xl font-semibold leading-none tracking-tight mt-9">
         Bancos utilizados
       </h2>
