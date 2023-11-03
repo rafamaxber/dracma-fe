@@ -2,6 +2,10 @@ import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { HeaderNav } from '@/components/HeaderNav/header-nav'
+import { LeftBar } from '@/components/LeftBar/left-bar'
+import { Footer } from '@/components/Footer/footer'
+import { RightBar } from '@/components/RightBar/right-bar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +20,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"
+          themes={['light', 'dark', 'system']}
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="h-full">
+            <HeaderNav className="h-20 bg-slate-300" />
+            <div className='flex'>
+              <LeftBar className="w-80 sticky top-0 h-full bg-slate-400" />
+              {/* <LeftBar className="w-14 hover:w-72 sticky top-0 h-full bg-slate-400" /> */}
+              <main className="mx-4 w-[100%]">{children}</main>
+              <RightBar className="w-80" />
+            </div>
+            {/* <Footer className="h-20 w-[100%] bg-slate-300 bottom-0 fixed" /> */}
+          </div>
         </ThemeProvider>
       </body>
     </html>

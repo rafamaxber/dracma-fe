@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import { ContainerForm } from "@/components/ui/container-form";
+import { AddBankForm } from "./bank/components/AddBank";
+import { AddInitialTrackDateCard } from "./initial-date/components/AddInitialTrackDateCard";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      teste
-    </main>
+    <ContainerForm>
+      <AddInitialTrackDateCard />
+      <AddBankForm />
+    </ContainerForm>
   )
 }
+
